@@ -3,8 +3,7 @@
 import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import { useAccount } from "wagmi";
-import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Address, Balance } from "~~/components/scaffold-eth";
+import { Address } from "~~/components/scaffold-eth";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 
 const Home: NextPage = () => {
@@ -55,7 +54,7 @@ const Home: NextPage = () => {
           <button
             className="btn btn-primary mt-4"
             onClick={async () => {
-              const response = await writeBossGameAsync({
+              await writeBossGameAsync({
                 functionName: "attackBoss",
               });
             }}
